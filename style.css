@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
-*,*::before,*::after{
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
-  position:relative;
+  position: relative;
   background-color: #014f9d;
   /* background-image: url(./night-sky.jpg);
   background-size: cover;
@@ -18,56 +20,62 @@ body {
   line-height: 1.6;
 }
 
-.item1{grid-area: a;}
-.item2{grid-area: b;}
-.item3{grid-area: c;}
-.item4{grid-area: d;}
-.item5{grid-area: e;}
-.item6{grid-area: f;}
+.item1 {
+  grid-area: a;
+}
+.item2 {
+  grid-area: b;
+}
+.item3 {
+  grid-area: c;
+}
+.item4 {
+  grid-area: d;
+}
+.item5 {
+  grid-area: e;
+}
+.item6 {
+  grid-area: f;
+}
 
-.card{
-  position:absolute;
-  top:12rem;
-  max-width: 500px;
-  box-shadow: 0 0 10px 1px; 
-  display:grid;
+.card {
+  position: absolute;
+  top: 12rem;
+  max-width: 400px;
+  box-shadow: 0 0 10px 1px;
+  display: grid;
   gap: 5px;
   padding: 1rem;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.3);
-  /* grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, auto); */
-  grid-template-areas: 
-    "a a b"
-    "a a b"
-    "c c c"
-    "d d d"
-    "e f ."; 
+  grid-template-areas:
+    'a a b'
+    'a a b'
+    'c c c'
+    'd d d'
+    'e f .';
 }
-#name{
-  position:absolute;
-  top:0;
+#name {
+  position: absolute;
+  top: 0;
   font-size: 5rem;
   text-align: center;
   color: white;
-  
 }
-#temp{
-  font-size:3rem;
+#temp {
+  font-size: 3rem;
   color: white;
 }
-#conditions{
+#conditions {
   font-size: 1.5rem;
   color: white;
 }
-#icon{
- padding-left: 13rem
+#icon {
+  padding-left: 0rem;
 }
 #high-temp,
 #low-temp,
-#feels-like{
-  color:white
+#feels-like {
+  color: white;
 }
-
-
-
