@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
   // variables
   let icon = ''
   let lat = 0.0
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log({ lat: lat, lng: lng })
     // fetch JSON for users device location
     fetch(
-      'http://api.openweathermap.org/data/2.5/weather?lat=' +
+      'https://api.openweathermap.org/data/2.5/weather?lat=' +
         lat +
         '&lon=' +
         lng +
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('name').innerHTML = tempInfo.name
         document.getElementById('temp').innerHTML = tempInfo.main.temp + '°'
         icon =
-          'http://openweathermap.org/img/wn/' +
+          'https://openweathermap.org/img/wn/' +
           tempInfo.weather[0].icon +
           '@2x.png'
         document.getElementById('icon').setAttribute('SRC', icon)
