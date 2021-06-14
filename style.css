@@ -4,6 +4,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -41,8 +42,8 @@ body {
 
 .card {
   position: absolute;
-  top: 12rem;
-  max-width: 400px;
+  top: 8rem;
+  width: 350px;
   box-shadow: 0 0 10px 1px;
   display: grid;
   gap: 5px;
@@ -59,7 +60,7 @@ body {
 #name {
   position: absolute;
   top: 0;
-  font-size: 5rem;
+  font-size: 2.5rem;
   text-align: center;
   color: white;
 }
@@ -78,4 +79,43 @@ body {
 #low-temp,
 #feels-like {
   color: white;
+}
+/* this is temporary - to be part of a grid */
+.card2,
+.card3,
+.card4 {
+  color: white;
+  position: absolute;
+  width: 350px;
+  /* box-shadow: 0 0 10px 1px; */
+  display: grid;
+  gap: 5px;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.card2 {
+  top: 25rem;
+}
+.card3 {
+  top: 54rem;
+}
+.card4 {
+  top: 65rem;
+}
+.hourly-forecast {
+  display: flex;
+}
+.hourly-details {
+  color: white;
+  background-color: #014f9d;
+  width: fit-content;
+  border-radius: 20px;
+  padding: 0.45rem;
+}
+.one-hour,
+.two-hours,
+.three-hours {
+  width: 100px;
+  text-align: center;
 }

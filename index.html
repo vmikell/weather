@@ -4,19 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- refreshes page content = seconds -->
+    <!-- <meta http-equiv="refresh" content="10" /> -->
     <title>Vix Weather</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1 id="name">Location--</h1>
     <div class="card">
       <div class="item1" id="temp">Temp--</div>
-      <img class="item2" id="icon" alt="">
+      <img class="item2" id="icon" alt="" />
       <div class="item3" id="conditions">Conditions--</div>
       <div class="item4" id="feels-like">Feels like--</div>
-      <div class="item5" id="high-temp">Day--</div>
-      <div class="item6" id="low-temp">Night--</div>
+      <div class="item5" id="high-temp">Hi--</div>
+      <div class="item6" id="low-temp">Lo--</div>
+    </div>
+    <div class="card2">
+      <h1>Tomorrow</h1>
+      <div class="hourly-forecast">
+        <div class="one-hour">
+          <p id="first-time">6am</p>
+          <p id="first-temp"></p>
+          <img src="" alt="" id="first-icon" />
+        </div>
+        <div class="two-hours">
+          <p id="second-time">12pm</p>
+          <p id="second-temp"></p>
+          <img src="" alt="" id="second-icon" />
+        </div>
+        <div class="three-hours">
+          <p id="third-time">3pm</p>
+          <p id="third-temp"></p>
+          <img src="" alt="" id="third-icon" />
+        </div>
+      </div>
+      <a href="#" class="hourly-details">see details</a>
+    </div>
+    <div class="card3">
+      <h1 class="weekly-forecast">5 - Day</h1>
+    </div>
+    <div class="card4">
+      <h1 class="map" id="map"></h1>
     </div>
     <script src="index.js"></script>
   </body>
