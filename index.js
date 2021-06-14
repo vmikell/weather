@@ -8,7 +8,33 @@ window.addEventListener('DOMContentLoaded', () => {
   let lng = 0.0
   let tempInfo = {}
   let forecast = {}
-
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  const time = [
+    '12am',
+    '1am',
+    '2am',
+    '3am',
+    '4am',
+    '5am',
+    '6am',
+    '7am',
+    '8am',
+    '9am',
+    '10am',
+    '11am',
+    '12pm',
+    '1pm',
+    '2pm',
+    '3pm',
+    '4pm',
+    '5pm',
+    '6pm',
+    '7pm',
+    '8pm',
+    '9pm',
+    '10pm',
+    '11pm',
+  ]
   // determine user's device location
   navigator.geolocation.getCurrentPosition(function (position) {
     lat = position.coords.latitude
@@ -69,32 +95,52 @@ window.addEventListener('DOMContentLoaded', () => {
           forecast.list[5].weather[0].icon +
           '@2x.png'
 
-        //  6am
-        document.getElementById('first-temp').innerHTML =
-          forecast.list[1].main.temp + '°'
+        let firstDayString = (forecast.list[0].dt_txt)
+        let d1 = new Date(firstDayString)
+        let firstDayName = days[d1.getDay()]
+        let firstHour = time[d1.getHours()]
+        
+        let secondDayString = forecast.list[1].dt_txt
+        let d2 = new Date(secondDayString)
+        let secondDayName = days[d2.getDay()]
+        let secondHour = time[d2.getHours()]
+
+        let thirdDayString = forecast.list[3].dt_txt
+        let d3 = new Date(thirdDayString)
+        let thirdDayName = days[d3.getDay()]
+        let thirdHour = time[d3.getHours()]
+
+        //  first time slot
+        document.getElementById('first-time').innerHTML = firstDayName + ' ' + firstHour
+          document.getElementById('first-temp').innerHTML =
+            forecast.list[0].main.temp + '°'
         document.getElementById('first-icon').setAttribute('SRC', forecastIcon1)
 
-        //  12pm
+        //  second time slot
+        document.getElementById('second-time').innerHTML =
+          secondDayName + ' ' + secondHour
         document.getElementById('second-temp').innerHTML =
-          forecast.list[3].main.temp + '°'
+          forecast.list[1].main.temp + '°'
         document
           .getElementById('second-icon')
           .setAttribute('SRC', forecastIcon2)
 
-        //  6pm
+        //  third time slot
+        document.getElementById('third-time').innerHTML =
+          thirdDayName + ' ' + thirdHour
         document.getElementById('third-temp').innerHTML =
-          forecast.list[5].main.temp + '°'
+          forecast.list[2].main.temp + '°'
         document.getElementById('third-icon').setAttribute('SRC', forecastIcon3)
       })
 
-      let url =
-        'https://openweathermap.org/weathermap?basemap=map&cities=false&layer=clouds&lat=' +
-        lat +
-        '&lon=' +
-        lng +
-        '&zoom=8'
-      let map = `url(${url})`
-    document.getElementById('map').style.backgroundImage = map;
-    console.log(map)
+    //   let url =
+    //     'https://openweathermap.org/weathermap?basemap=map&cities=false&layer=clouds&lat=' +
+    //     lat +
+    //     '&lon=' +
+    //     lng +
+    //     '&zoom=8'
+    //   let map = `url(${url})`
+    // document.getElementById('map').style.backgroundImage = map;
+    // console.log(map)
   })
 })
