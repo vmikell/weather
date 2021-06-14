@@ -105,7 +105,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let secondDayName = days[d2.getDay()]
         let secondHour = time[d2.getHours()]
 
-        let thirdDayString = forecast.list[3].dt_txt
+        let thirdDayString = forecast.list[2].dt_txt
         let d3 = new Date(thirdDayString)
         let thirdDayName = days[d3.getDay()]
         let thirdHour = time[d3.getHours()]
