@@ -80,6 +80,10 @@ body {
 #feels-like {
   color: white;
 }
+.card p{
+  line-height: .1rem;
+}
+
 /* this is temporary - to be part of a grid */
 .card2,
 .card3,
@@ -98,10 +102,10 @@ body {
   top: 25rem;
 }
 .card3 {
-  top: 54rem;
+  top: 59rem;
 }
 .card4 {
-  top: 65rem;
+  top: 105rem;
 }
 .hourly-forecast {
   display: flex;
@@ -119,3 +123,10 @@ body {
   width: 100px;
   text-align: center;
 }
+.day{
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
+
