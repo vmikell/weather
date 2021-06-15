@@ -20,6 +20,13 @@ body {
   font-weight: 300;
   line-height: 1.6;
 }
+.container{
+  position:absolute;
+  top:0;
+  display: grid;
+  place-items: center;
+  width: 400px;
+}
 
 .item1 {
   grid-area: a;
@@ -39,7 +46,30 @@ body {
 .item6 {
   grid-area: f;
 }
-
+.search-container{
+  display: grid;
+  align-items: center;
+}
+#search{
+  position: absolute;
+  top:0;
+  justify-self: center;
+  border-radius: 25px;
+  height:3rem;
+  width: 300px;
+  text-align: center;
+}
+#search-button{
+  color: white;
+  position: absolute;
+  top:0;
+  right: 50px;
+  background-color: transparent;
+  border: none;
+}
+#search-icon{
+  padding-top:5px
+}
 .card {
   position: absolute;
   top: 8rem;
@@ -59,7 +89,7 @@ body {
 }
 #name {
   position: absolute;
-  top: 0;
+  top: 1.2rem;
   font-size: 2.5rem;
   text-align: center;
   color: white;

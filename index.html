@@ -16,93 +16,105 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 id="name">Location--</h1>
-    <div class="card">
-      <div class="item1" id="temp">Temp--</div>
-      <img class="item2" id="icon" alt="" />
-      <div class="item3" id="conditions">Conditions--</div>
-      <div class="item4" id="feels-like">Feels like--</div>
-      <div class="item5" id="high-temp">Hi--</div>
-      <div class="item6" id="low-temp">Lo--</div>
-    </div>
-    <div class="card2">
-      <h1>Hourly Forecast</h1>
-      <div class="hourly-forecast">
-        <div class="one-hour">
-          <p id="first-time"></p>
-          <p id="first-temp"></p>
-          <img src="" alt="" id="first-icon" />
-          <p id="first-condition"></p>
-          <img src="./rain-drops-svgrepo-com.svg" alt=""/>
-          <p id="first-pop"></p>
+    <div class="container">
+      <div class="search-container">
+      <input
+        type="search"
+        id="search"
+        name="search"
+        placeholder="enter zip code: ex. 06851"
+      />
+      <button type="submit" id="search-button">
+        <img src="search-svgrepo-com.svg" alt="" id="search-icon" />
+      </button>
+      </div>
+      <h1 id="name">Location--</h1>
+      <div class="card">
+        <div class="item1" id="temp">Temp--</div>
+        <img class="item2" id="icon" alt="" />
+        <div class="item3" id="conditions">Conditions--</div>
+        <div class="item4" id="feels-like">Feels like--</div>
+        <div class="item5" id="high-temp">Hi--</div>
+        <div class="item6" id="low-temp">Lo--</div>
+      </div>
+      <div class="card2">
+        <h1>Hourly Forecast</h1>
+        <div class="hourly-forecast">
+          <div class="one-hour">
+            <p id="first-time"></p>
+            <p id="first-temp"></p>
+            <img src="" alt="" id="first-icon" />
+            <p id="first-condition"></p>
+            <img src="./rain-drops-svgrepo-com.svg" alt="" />
+            <p id="first-pop"></p>
+          </div>
+          <div class="two-hours">
+            <p id="second-time"></p>
+            <p id="second-temp"></p>
+            <img src="" alt="" id="second-icon" />
+            <p id="second-condition"></p>
+            <img src="./rain-drops-svgrepo-com.svg" alt="" />
+            <p id="second-pop"></p>
+          </div>
+          <div class="three-hours">
+            <p id="third-time"></p>
+            <p id="third-temp"></p>
+            <img src="" alt="" id="third-icon" />
+            <p id="third-condition"></p>
+            <img src="./rain-drops-svgrepo-com.svg" alt="" />
+            <p id="third-pop"></p>
+          </div>
         </div>
-        <div class="two-hours">
-          <p id="second-time"></p>
-          <p id="second-temp"></p>
-          <img src="" alt="" id="second-icon" />
-          <p id="second-condition"></p>
-           <img src="./rain-drops-svgrepo-com.svg" alt=""/>
-          <p id="second-pop"></p>
-        </div>
-        <div class="three-hours">
-          <p id="third-time"></p>
-          <p id="third-temp"></p>
-          <img src="" alt="" id="third-icon" />
-          <p id="third-condition"></p>
-           <img src="./rain-drops-svgrepo-com.svg" alt=""/>
-          <p id="third-pop"></p>
+        <a href="#" class="hourly-details">see details</a>
+      </div>
+      <div class="card3">
+        <h1 class="weekly-forecast">5 - Day Forecast</h1>
+        <div class="three-day">
+          <div class="day-one day">
+            <p id="day-one"></p>
+            <img src="" alt="" id="icon-one" />
+            <p id="temp-one"></p>
+            <p id="condition-one"></p>
+            <img src="./rain-drops-svgrepo-com.svg" alt="" />
+            <p id="pop-one"></p>
+          </div>
+          <div class="day-two day">
+            <p id="day-two"></p>
+            <img src="" alt="" id="icon-two" />
+            <p id="temp-two"></p>
+            <p id="condition-two"></p>
+            <img src="./rain-drops-svgrepo-com.svg" alt="" />
+            <p id="pop-two"></p>
+          </div>
+          <div class="day-three day">
+            <p id="day-three"></p>
+            <img src="" alt="" id="icon-three" />
+            <p id="temp-three"></p>
+            <p id="condition-three"></p>
+            <img src="./rain-drops-svgrepo-com.svg" alt="" />
+            <p id="pop-three"></p>
+          </div>
+          <div class="day-four day">
+            <p id="day-four"></p>
+            <img src="" alt="" id="icon-four" />
+            <p id="temp-four"></p>
+            <p id="condition-four"></p>
+            <img src="./rain-drops-svgrepo-com.svg" alt="" />
+            <p id="pop-four"></p>
+          </div>
+          <div class="day-five day">
+            <p id="day-five"></p>
+            <img src="" alt="" id="icon-five" />
+            <p id="temp-five"></p>
+            <p id="condition-five"></p>
+            <img src="./rain-drops-svgrepo-com.svg" alt="" />
+            <p id="pop-five"></p>
+          </div>
         </div>
       </div>
-      <a href="#" class="hourly-details">see details</a>
-    </div>
-    <div class="card3">
-      <h1 class="weekly-forecast">5 - Day Forecast</h1>
-      <div class="three-day">
-        <div class="day-one day">
-          <p id="day-one"></p>
-          <img src="" alt="" id="icon-one">
-          <p id="temp-one"></p>
-          <p id="condition-one"></p>
-          <img src="./rain-drops-svgrepo-com.svg" alt=""/>
-          <p id="pop-one"></p>
-        </div>
-        <div class="day-two day">
-          <p id="day-two"></p>
-          <img src="" alt="" id="icon-two">
-          <p id="temp-two"></p>
-          <p id="condition-two"></p>
-          <img src="./rain-drops-svgrepo-com.svg" alt=""/>
-          <p id="pop-two"></p>
-        </div>
-        <div class="day-three day">
-          <p id="day-three"></p>
-          <img src="" alt="" id="icon-three">
-          <p id="temp-three"></p>
-          <p id="condition-three"></p>
-          <img src="./rain-drops-svgrepo-com.svg" alt=""/>
-          <p id="pop-three"></p>
-        </div>
-        <div class="day-four day">
-          <p id="day-four"></p>
-          <img src="" alt="" id="icon-four">
-          <p id="temp-four"></p>
-          <p id="condition-four"></p>
-          <img src="./rain-drops-svgrepo-com.svg" alt=""/>
-          <p id="pop-four"></p>
-        </div>
-        <div class="day-five day">
-          <p id="day-five"></p>
-          <img src="" alt="" id="icon-five">
-          <p id="temp-five"></p>
-          <p id="condition-five"></p>
-          <img src="./rain-drops-svgrepo-com.svg" alt=""/>
-          <p id="pop-five"></p>
-        </div>
+      <div class="card4">
+        <h1 class="map" id="map"></h1>
       </div>
-      
-    </div>
-    <div class="card4">
-      <h1 class="map" id="map"></h1>
     </div>
     <script src="index.js"></script>
   </body>
