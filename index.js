@@ -133,7 +133,7 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('first-condition').innerHTML =
                 tempInfo.hourly[1].weather[0].main
               document.getElementById('first-pop').innerHTML =
-                tempInfo.hourly[1].pop * 100 + '%'
+                Math.round(tempInfo.hourly[1].pop * 100) + '%'
 
               //  second time slot
               document.getElementById('second-time').innerHTML =
@@ -146,7 +146,7 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('second-condition').innerHTML =
                 tempInfo.hourly[2].weather[0].main
               document.getElementById('second-pop').innerHTML =
-                tempInfo.hourly[2].pop * 100 + '%'
+                Math.round(tempInfo.hourly[2].pop * 100) + '%'
 
               //  third time slot
               document.getElementById('third-time').innerHTML =
@@ -159,7 +159,7 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('third-condition').innerHTML =
                 tempInfo.hourly[3].weather[0].main
               document.getElementById('third-pop').innerHTML =
-                tempInfo.hourly[3].pop * 100 + '%'
+                Math.round(tempInfo.hourly[3].pop * 100) + '%'
 
               // 3-day forecast starts here
               const utcSec1 = tempInfo.daily[1].dt
