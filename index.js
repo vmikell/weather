@@ -53,42 +53,7 @@ window.addEventListener('DOMContentLoaded', function () {
   })
   getTemp()
 })
-// onClick / search starts here
-const search = document.getElementById('search-button')
-const input = document.getElementById('search')
-let data = {}
 
-search.addEventListener('click', () => {
-  txtInput = input.value
-  getInputTemp()
-})
-
-document.addEventListener('keyup', function (event) {
-  if (event.keyCode === 13) {
-    txtInput = input.value
-    getInputTemp()
-  }
-})
-
-
-  function getInputTemp (){
-  fetch(
-    'https://maps.googleapis.com/maps/api/geocode/json?address=' +
-      txtInput +
-      '&key=AIzaSyDQpgWl8Agt8U3yuVIR9C8GeWMPsVov_ro'
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('great success!', data)
-      data = data
-
-      lat = data.results[0].geometry.location.lat
-      lng = data.results[0].geometry.location.lng
-      getTemp()
-    })
-  console.log('google stuff!', txtInput)
-
-}
 
 // populate temperature & forecast info
 function getTemp() {
@@ -291,4 +256,41 @@ function getTemp() {
         })
     })
   //
+}
+
+// onClick / search starts here
+const search = document.getElementById('search-button')
+const input = document.getElementById('search')
+let data = {}
+
+search.addEventListener('click', () => {
+  txtInput = input.value
+  getInputTemp()
+})
+
+document.addEventListener('keyup', function (event) {
+  if (event.keyCode === 13) {
+    txtInput = input.value
+    getInputTemp()
+  }
+})
+
+
+  function getInputTemp (){
+  fetch(
+    'https://maps.googleapis.com/maps/api/geocode/json?address=' +
+      txtInput +
+      '&key=AIzaSyDQpgWl8Agt8U3yuVIR9C8GeWMPsVov_ro'
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('great success!', data)
+      data = data
+
+      lat = data.results[0].geometry.location.lat
+      lng = data.results[0].geometry.location.lng
+      getTemp()
+    })
+  console.log('google stuff!', txtInput)
+
 }
