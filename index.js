@@ -38,12 +38,6 @@ const time = [
   '11pm',
 ]
 
-// get device location
-navigator.geolocation.getCurrentPosition(function (position) {
-  lat = position.coords.latitude
-  lng = position.coords.longitude
-})
-
 // on page load starts here
 window.addEventListener('DOMContentLoaded', function () {
   navigator.geolocation.getCurrentPosition(function (position) {
@@ -56,10 +50,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
 // populate temperature & forecast info
 function getTemp() {
-  navigator.geolocation.getCurrentPosition(function (position) {
-    lat = position.coords.latitude
-    lng = position.coords.longitude
-  })
   // fetch JSON for users device location
   fetch(
     'https://api.openweathermap.org/data/2.5/onecall?lat=' +
