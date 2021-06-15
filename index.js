@@ -215,7 +215,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 .getElementById('icon-one')
                 .setAttribute('SRC', dayOneIcon)
               document.getElementById('pop-one').innerHTML =
-                tempInfo.daily[1].pop * 100 + '%'
+                Math.round(tempInfo.daily[1].pop * 100) + '%'
 
               document.getElementById('day-two').innerHTML = secondDayName
               document.getElementById('temp-two').innerHTML =
@@ -224,7 +224,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 .getElementById('icon-two')
                 .setAttribute('SRC', dayTwoIcon)
               document.getElementById('pop-two').innerHTML =
-                tempInfo.daily[2].pop * 100 + '%'
+                Math.round(tempInfo.daily[2].pop * 100) + '%'
 
               document.getElementById('day-three').innerHTML = thirdDayName
               document.getElementById('temp-three').innerHTML =
@@ -233,7 +233,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 .getElementById('icon-three')
                 .setAttribute('SRC', dayThreeIcon)
               document.getElementById('pop-three').innerHTML =
-                tempInfo.daily[3].pop * 100 + '%'
+                Math.round(tempInfo.daily[3].pop * 100) + '%'
 
               document.getElementById('day-four').innerHTML = fourthDayName
               document.getElementById('temp-four').innerHTML =
@@ -242,7 +242,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 .getElementById('icon-four')
                 .setAttribute('SRC', dayFourIcon)
               document.getElementById('pop-four').innerHTML =
-                tempInfo.daily[4].pop * 100 + '%'
+                Math.round(tempInfo.daily[4].pop * 100) + '%'
 
               document.getElementById('day-five').innerHTML = fifthDayName
               document.getElementById('temp-five').innerHTML =
@@ -251,7 +251,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 .getElementById('icon-five')
                 .setAttribute('SRC', dayFiveIcon)
               document.getElementById('pop-five').innerHTML =
-                tempInfo.daily[5].pop * 100 + '%'
+                Math.round(tempInfo.daily[5].pop * 100) + '%'
             })
         })
     }
