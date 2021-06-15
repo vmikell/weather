@@ -54,9 +54,12 @@ window.addEventListener('DOMContentLoaded', function () {
   getTemp()
 })
 
-
 // populate temperature & forecast info
 function getTemp() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    lat = position.coords.latitude
+    lng = position.coords.longitude
+  })
   // fetch JSON for users device location
   fetch(
     'https://api.openweathermap.org/data/2.5/onecall?lat=' +
@@ -275,8 +278,7 @@ document.addEventListener('keyup', function (event) {
   }
 })
 
-
-  function getInputTemp (){
+function getInputTemp() {
   fetch(
     'https://maps.googleapis.com/maps/api/geocode/json?address=' +
       txtInput +
@@ -292,5 +294,4 @@ document.addEventListener('keyup', function (event) {
       getTemp()
     })
   console.log('google stuff!', txtInput)
-
 }
