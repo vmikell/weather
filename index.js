@@ -290,6 +290,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // get user input location and populate cards
     function getInputTemp() {
+      txtInput = txtInput
       fetch(
         'https://maps.googleapis.com/maps/api/geocode/json?address=' +
           txtInput +
@@ -303,9 +304,13 @@ window.addEventListener('DOMContentLoaded', function () {
           fetchAndSetInfo()
         })
     }
-  })
-})
+
 const reload = document.getElementById('reload-button')
 reload.addEventListener('click', () => {
   getInputTemp()
+  console.log('great success!!!')
 })
+
+  })
+})
+
