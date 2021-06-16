@@ -68,7 +68,15 @@ body {
   border: none;
 }
 #search-icon{
-  padding-top:5px
+  padding-top:10px
+}
+#reload-button{
+  position: absolute;
+  bottom:0;
+  right:0;
+  background-color: transparent;
+  border: none;
+  z-index: 5;
 }
 .card {
   position: absolute;

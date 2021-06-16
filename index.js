@@ -1,4 +1,4 @@
-// variables
+// global variables
 let icon = ''
 let forecastIcon1 = ''
 let forecastIcon2 = ''
@@ -7,9 +7,6 @@ let lat = 0.0
 let lng = 0.0
 let tempInfo = {}
 let forecast = {}
-
-// const input = '06851'
-
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const time = [
   '12am',
@@ -46,7 +43,7 @@ window.addEventListener('DOMContentLoaded', function () {
     console.log(lat, lng)
     fetchAndSetInfo()
 
-    // fetch JSON for users device location
+    // fetch JSON for users device location & set HTML
     function fetchAndSetInfo() {
       fetch(
         'https://api.openweathermap.org/data/2.5/onecall?lat=' +
@@ -59,9 +56,9 @@ window.addEventListener('DOMContentLoaded', function () {
         .then((data) => {
           tempInfo = data
           console.log(tempInfo)
-
+          // current weather card starts here
           document.getElementById('temp').innerHTML =
-            tempInfo.current.temp + '°'
+            Math.round(tempInfo.current.temp) + '°'
           icon =
             'https://openweathermap.org/img/wn/' +
             tempInfo.current.weather[0].icon +
@@ -72,11 +69,11 @@ window.addEventListener('DOMContentLoaded', function () {
             ' - ' +
             tempInfo.current.weather[0].description
           document.getElementById('feels-like').innerHTML =
-            'Feels like: ' + tempInfo.current.feels_like + '°'
+            'Feels like: ' + Math.round(tempInfo.current.feels_like) + '°'
           document.getElementById('high-temp').innerHTML =
-            'Hi: ' + tempInfo.daily[0].temp.max + '°'
+            'Hi: ' + Math.round(tempInfo.daily[0].temp.max) + '°'
           document.getElementById('low-temp').innerHTML =
-            'Low: ' + tempInfo.daily[0].temp.min + '°'
+            'Low: ' + Math.round(tempInfo.daily[0].temp.min) + '°'
 
           fetch(
             'https://api.openweathermap.org/data/2.5/forecast?lat=' +
@@ -103,6 +100,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 tempInfo.hourly[3].weather[0].icon +
                 '@2x.png'
 
+              // converting dateTime to human format
               const utcSeconds = tempInfo.hourly[1].dt
               const d = new Date(0)
               d.setUTCSeconds(utcSeconds)
@@ -126,7 +124,7 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('first-time').innerHTML =
                 firstHourName + ' ' + firstHour
               document.getElementById('first-temp').innerHTML =
-                tempInfo.hourly[1].temp + '°'
+                Math.round(tempInfo.hourly[1].temp) + '°'
               document
                 .getElementById('first-icon')
                 .setAttribute('SRC', forecastIcon1)
@@ -139,7 +137,7 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('second-time').innerHTML =
                 secondHourName + ' ' + secondHour
               document.getElementById('second-temp').innerHTML =
-                tempInfo.hourly[2].temp + '°'
+                Math.round(tempInfo.hourly[2].temp) + '°'
               document
                 .getElementById('second-icon')
                 .setAttribute('SRC', forecastIcon2)
@@ -152,7 +150,7 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('third-time').innerHTML =
                 thirdHourName + ' ' + thirdHour
               document.getElementById('third-temp').innerHTML =
-                tempInfo.hourly[3].temp + '°'
+                Math.round(tempInfo.hourly[3].temp) + '°'
               document
                 .getElementById('third-icon')
                 .setAttribute('SRC', forecastIcon3)
@@ -161,7 +159,8 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('third-pop').innerHTML =
                 Math.round(tempInfo.hourly[3].pop * 100) + '%'
 
-              // 3-day forecast starts here
+              // 5-day forecast card starts here
+              // turning dateTime to human format
               const utcSec1 = tempInfo.daily[1].dt
               const day1 = new Date(0)
               day1.setUTCSeconds(utcSec1)
@@ -210,7 +209,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
               document.getElementById('day-one').innerHTML = firstDayName
               document.getElementById('temp-one').innerHTML =
-                tempInfo.daily[1].temp.max + '°'
+                Math.round(tempInfo.daily[1].temp.max) +
+                '° / ' +
+                Math.round(tempInfo.daily[1].temp.min) +
+                '°'
               document
                 .getElementById('icon-one')
                 .setAttribute('SRC', dayOneIcon)
@@ -219,7 +221,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
               document.getElementById('day-two').innerHTML = secondDayName
               document.getElementById('temp-two').innerHTML =
-                tempInfo.daily[2].temp.max + '°'
+                Math.round(tempInfo.daily[2].temp.max) +
+                '° / ' +
+                Math.round(tempInfo.daily[2].temp.min) +
+                '°'
               document
                 .getElementById('icon-two')
                 .setAttribute('SRC', dayTwoIcon)
@@ -228,7 +233,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
               document.getElementById('day-three').innerHTML = thirdDayName
               document.getElementById('temp-three').innerHTML =
-                tempInfo.daily[3].temp.max + '°'
+                Math.round(tempInfo.daily[3].temp.max) +
+                '° / ' +
+                Math.round(tempInfo.daily[3].temp.min) +
+                '°'
               document
                 .getElementById('icon-three')
                 .setAttribute('SRC', dayThreeIcon)
@@ -237,7 +245,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
               document.getElementById('day-four').innerHTML = fourthDayName
               document.getElementById('temp-four').innerHTML =
-                tempInfo.daily[4].temp.max + '°'
+                Math.round(tempInfo.daily[4].temp.max) +
+                '° / ' +
+                Math.round(tempInfo.daily[4].temp.min) +
+                '°'
               document
                 .getElementById('icon-four')
                 .setAttribute('SRC', dayFourIcon)
@@ -246,7 +257,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
               document.getElementById('day-five').innerHTML = fifthDayName
               document.getElementById('temp-five').innerHTML =
-                tempInfo.daily[5].temp.max + '°'
+                Math.round(tempInfo.daily[5].temp.max) +
+                '° / ' +
+                Math.round(tempInfo.daily[5].temp.min) +
+                '°'
               document
                 .getElementById('icon-five')
                 .setAttribute('SRC', dayFiveIcon)
@@ -266,6 +280,7 @@ window.addEventListener('DOMContentLoaded', function () {
       getInputTemp()
     })
 
+    // on 'Enter' button press starts here
     document.addEventListener('keyup', function (event) {
       if (event.keyCode === 13) {
         txtInput = input.value
@@ -273,6 +288,7 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     })
 
+    // get user input location and populate cards
     function getInputTemp() {
       fetch(
         'https://maps.googleapis.com/maps/api/geocode/json?address=' +
@@ -281,14 +297,15 @@ window.addEventListener('DOMContentLoaded', function () {
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log('great success!', data)
           data = data
-
           lat = data.results[0].geometry.location.lat
           lng = data.results[0].geometry.location.lng
           fetchAndSetInfo()
         })
-      console.log('google stuff!', txtInput)
     }
   })
+})
+const reload = document.getElementById('reload-button')
+reload.addEventListener('click', () => {
+  getInputTemp()
 })
