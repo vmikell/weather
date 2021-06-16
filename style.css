@@ -150,7 +150,7 @@ input[type='search']::-webkit-search-cancel-button {
 .card2 {
   top: 25rem;
   height: 520px;
-  display: none;
+  /* display: none; */
 }
 .card2-details {
   width: 350px;
@@ -159,14 +159,16 @@ input[type='search']::-webkit-search-cancel-button {
   top: 25rem;
   height: 520px;
   border-radius: 15px;
+  display: none
 }
 .todays-details {
   color: white;
   position: absolute;
   padding: 1rem;
 
+
   z-index: 20;
-  /* text-decoration: underline; */
+  display: none;
 }
 .night-container,
 .daytime-container {
