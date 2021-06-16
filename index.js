@@ -278,7 +278,7 @@ window.addEventListener('DOMContentLoaded', function () {
     search.addEventListener('click', () => {
       txtInput = input.value
       getInputTemp()
-      navigator.vibrate([50])
+      navigator.vibrate([25])
     })
 
     // on 'Enter' button press starts here
@@ -286,7 +286,7 @@ window.addEventListener('DOMContentLoaded', function () {
       if (event.keyCode === 13) {
         txtInput = input.value
         getInputTemp()
-        navigator.vibrate([50])
+        navigator.vibrate([25])
       }
     })
 
@@ -311,7 +311,7 @@ window.addEventListener('DOMContentLoaded', function () {
     reload.addEventListener('click', () => {
       getInputTemp()
       console.log('great success!!!')
-      navigator.vibrate([50])
+      navigator.vibrate([25])
     })
   })
 })

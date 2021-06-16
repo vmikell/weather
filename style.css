@@ -20,9 +20,9 @@ body {
   font-weight: 300;
   line-height: 1.6;
 }
-.container{
-  position:absolute;
-  top:0;
+.container {
+  position: absolute;
+  top: 0;
   display: grid;
   place-items: center;
   width: 400px;
@@ -46,44 +46,45 @@ body {
 .item6 {
   grid-area: f;
 }
-.search-container{
+.search-container {
   display: grid;
   align-items: center;
 }
-#search{
+#search {
   position: absolute;
-  top:0;
+  top: 0;
   justify-self: center;
+  border: none;
   border-radius: 25px;
-  height:3rem;
+  height: 3rem;
   width: 300px;
   text-align: center;
 }
-#search:focus{
+#search:focus {
   outline: none;
 }
-input[type="search"]::-webkit-search-cancel-button{
+input[type='search']::-webkit-search-cancel-button {
   position: absolute;
-  right:15px;
+  right: 15px;
   font-size: 1.5rem;
 }
-#search-button{
+#search-button {
   color: white;
   position: absolute;
-  top:0;
+  top: 0;
   right: 50px;
   background-color: transparent;
   border: none;
 }
-#search-icon{
+#search-icon {
   position: absolute;
-  padding-top:10px;
-  right:260px;
+  padding-top: 10px;
+  right: 260px;
 }
-#reload-button{
+#reload-button {
   position: absolute;
-  bottom:1rem;
-  right:1rem;
+  bottom: 1rem;
+  right: 1rem;
   background-color: transparent;
   border: none;
   z-index: 5;
@@ -128,8 +129,8 @@ input[type="search"]::-webkit-search-cancel-button{
 #feels-like {
   color: white;
 }
-.card p{
-  line-height: .1rem;
+.card p {
+  line-height: 0.1rem;
 }
 
 /* this is temporary - to be part of a grid */
@@ -148,6 +149,34 @@ input[type="search"]::-webkit-search-cancel-button{
 }
 .card2 {
   top: 25rem;
+  height: 520px;
+  display: none;
+}
+.card2-details {
+  width: 350px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 25rem;
+  height: 520px;
+  border-radius: 15px;
+}
+.todays-details {
+  color: white;
+  position: absolute;
+  padding: 1rem;
+
+  z-index: 20;
+  /* text-decoration: underline; */
+}
+.night-container,
+.daytime-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#night-icon,
+#daytime-icon {
+  height: 40px;
 }
 .card3 {
   top: 59rem;
@@ -159,11 +188,14 @@ input[type="search"]::-webkit-search-cancel-button{
   display: flex;
 }
 .hourly-details {
+  position: absolute;
   color: white;
   background-color: #014f9d;
   width: fit-content;
   border-radius: 20px;
   padding: 0.45rem;
+  bottom: 1rem;
+  left: 1rem;
 }
 .one-hour,
 .two-hours,
@@ -171,10 +203,8 @@ input[type="search"]::-webkit-search-cancel-button{
   width: 100px;
   text-align: center;
 }
-.day{
-  display:flex;
+.day {
+  display: flex;
   align-items: center;
   justify-content: space-evenly;
-  
 }
-
