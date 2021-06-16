@@ -309,6 +309,7 @@ const reload = document.getElementById('reload-button')
 reload.addEventListener('click', () => {
   getInputTemp()
   console.log('great success!!!')
+  navigator.vibrate([200])
 })
 
   })
