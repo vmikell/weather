@@ -159,6 +159,174 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('third-pop').innerHTML =
                 Math.round(tempInfo.hourly[3].pop * 100) + '%'
 
+              // today's details start here
+              const todaysDay = tempInfo.current.dt
+              const today = new Date(0)
+              today.setUTCSeconds(todaysDay)
+              const displayDay = days[today.getDay()]
+              document.getElementById('daytime-day').innerHTML =
+                displayDay + ' '
+              document.getElementById('daytime-temp').innerHTML =
+                Math.round(tempInfo.daily[0].temp.day) + '°'
+              document
+                .getElementById('daytime-icon')
+                .setAttribute(
+                  'SRC',
+                  'https://openweathermap.org/img/wn/' +
+                    tempInfo.daily[0].weather[0].icon +
+                    '@2x.png'
+                )
+              document.getElementById('daytime-conditions').innerHTML =
+                tempInfo.daily[0].weather[0].description
+              document.getElementById('daytime-pop').innerHTML =
+                Math.round(tempInfo.daily[0].pop * 100) + '%'
+              document.getElementById('daytime-wind').innerHTML =
+                Math.round(tempInfo.daily[0].wind_speed) + 'mph'
+              document.getElementById('summary-conditions').innerHTML =
+                tempInfo.daily[0].weather[0].description
+              document.getElementById('summary-hi-temp').innerHTML =
+                Math.round(tempInfo.daily[0].temp.max) + '°'
+              document.getElementById('summary-lo-temp').innerHTML =
+                Math.round(tempInfo.daily[0].temp.min) + '°'
+              document.getElementById('summary-pop').innerHTML =
+                Math.round(tempInfo.daily[0].pop * 100) + '%'
+              document.getElementById('summary-wind').innerHTML =
+                Math.round(tempInfo.daily[0].wind_gust) + 'mph'
+              document.getElementById('summary-humidity').innerHTML =
+                Math.round(tempInfo.daily[0].humidity) + '%'
+
+              document.getElementById('dew-point').innerHTML =
+                ':  ' + Math.round(tempInfo.daily[0].dew_point) + '° '
+              //translating wind direction degrees into human language
+
+              let degrees = tempInfo.daily[0].wind_deg
+              let winDir = ''
+              const direction = [
+                'N',
+                'N/NE',
+                'NE',
+                'E/NE',
+                'E',
+                'E/SE',
+                'SE',
+                'S/SE',
+                'S',
+                'S/SW',
+                'SW',
+                'W/SW',
+                'W',
+                'W/NW',
+                'NW',
+                'N/NW',
+              ]
+
+              if (degrees < 12 || (degrees > 348 && dirDeg < 360)) {
+                winDir = direction[0] // north
+              } else if (degrees > 11 && degrees < 35) {
+                winDir = direction[1] // north- northeast
+              } else if (degrees > 34 && degrees < 57) {
+                winDir = direction[2] //northeast
+              } else if (degrees > 56 && degrees < 80) {
+                winDir = direction[3] //east-northeast
+              } else if (degrees > 79 && degrees < 102) {
+                winDir = direction[4] //east
+              } else if (degrees > 101 && degrees < 125) {
+                winDir = direction[5] //east-southeast
+              } else if (degrees > 124 && degrees < 147) {
+                winDir = direction[6] //southeast
+              } else if (degrees > 146 && degrees < 170) {
+                winDir = direction[7] //south-southeast
+              } else if (degrees > 169 && degrees < 192) {
+                winDir = direction[8] //south
+              } else if (degrees > 191 && degrees < 215) {
+                winDir = direction[9] //south-southwest
+              } else if (degrees > 214 && degrees < 238) {
+                winDir = direction[10] //southwest
+              } else if (degrees > 237 && degrees < 259) {
+                winDir = direction[11] //west-southwest
+              } else if (degrees > 258 && degrees < 282) {
+                winDir = direction[12] //west
+              } else if (degrees > 281 && degrees < 305) {
+                winDir = direction[13] //west-northwest
+              } else if (degrees > 304 && degrees < 328) {
+                winDir = direction[14] //northwest
+              } else if (degrees > 327 && degrees < 349) {
+                winDir = direction[15] //north-northwest
+              }
+
+              document.getElementById('wind').innerHTML =
+                ': ' +
+                Math.round(tempInfo.daily[0].wind_speed) +
+                ' mph  ' +
+                winDir
+              document.getElementById('pressure').innerHTML =
+                ': ' + Math.round(tempInfo.daily[0].pressure / 33.864) + ' inHg'
+              
+                // convert utc sunrise to human time
+              let sunriseUtcTime = tempInfo.daily[0].sunrise
+              let sunriseTime = new Date(0)
+              sunriseTime.setUTCSeconds(sunriseUtcTime)
+              sunriseTime = sunriseTime.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+              })
+            
+              document.getElementById('sunrise').innerHTML =
+              ': ' + sunriseTime
+
+              // convert utc sunset to human time
+              let sunsetUtcTime = tempInfo.daily[0].sunset
+              let sunsetTime = new Date(0)
+              sunsetTime.setUTCSeconds(sunsetUtcTime)
+              sunsetTime = sunsetTime.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+              })
+
+              document.getElementById('sunset').innerHTML =
+              ': ' + sunsetTime
+
+              //set uv index to human language
+              uvIndex = [
+                'Minimal Danger',
+                'Low Risk',
+                'Moderate Risk',
+                'High Risk',
+              ]
+              let uvi = Math.round(tempInfo.daily[0].uvi)
+              let uvText = ''
+              if (uvi < 3) {
+                uvText = uvIndex[0]
+              } else if (uvi > 2 && uvi < 5) {
+                uvText = uvIndex[1]
+              } else if (uvi > 5 && uvi < 8) {
+                uvText = uvIndex[2]
+              } else if (uvi >= 8) {
+                uvText = uvIndex[3]
+              }
+              document.getElementById('uv-index').innerHTML =
+              ': ' + uvText
+
+              function toggleCards() {
+                 let x = document.getElementById('card2')
+                 let y = document.getElementById('card2-details')
+                 if (x.style.display === 'grid') {
+                   x.style.display = 'none'
+                   y.style.display = 'grid'
+                 } else {
+                   x.style.display = 'grid'
+                   y.style.display = 'none'
+                 }
+              }
+              let cardTwoBtn = document.getElementById('card2-btn')
+              cardTwoBtn.addEventListener('click', () => {
+                toggleCards()
+              })
+              let todaysBtn = document.getElementById('todays-btn')
+              todaysBtn.addEventListener('click', ()=> {
+                toggleCards()
+              })
+
               // 5-day forecast card starts here
               // turning dateTime to human format
               const utcSec1 = tempInfo.daily[1].dt
@@ -308,10 +476,22 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     const reload = document.getElementById('reload-button')
+
     reload.addEventListener('click', () => {
-      getInputTemp()
-      console.log('great success!!!')
-      navigator.vibrate([25])
+      if (txtInput != '') {
+        getInputTemp()
+        console.log('great success!!!')
+        navigator.vibrate([25])
+      } else {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          lat = position.coords.latitude
+          lng = position.coords.longitude
+          console.log(lat, lng)
+          fetchAndSetInfo()
+        })
+      }
     })
   })
+
+  // TODO: make toggle button for card2 card2-details
 })

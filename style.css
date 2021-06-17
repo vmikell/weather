@@ -147,30 +147,35 @@ input[type='search']::-webkit-search-cancel-button {
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.3);
 }
+/* this one */
 .card2 {
   top: 25rem;
-  height: 520px;
-  /* display: none; */
+  height: 545px;
+  /* display:none */
 }
+.card2-hidden {
+  display: none;
+}
+/* this one */
 .card2-details {
   width: 350px;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.3);
   top: 25rem;
-  height: 520px;
+  height: 545px;
   border-radius: 15px;
-  display: none
+  display:none
+}
+.card2-details-hidden {
+  display: none;
 }
 .todays-details {
   color: white;
   position: absolute;
   padding: 1rem;
-
-
   z-index: 20;
-  display: none;
+  
 }
-.night-container,
 .daytime-container {
   display: flex;
   justify-content: space-evenly;
@@ -180,8 +185,27 @@ input[type='search']::-webkit-search-cancel-button {
 #daytime-icon {
   height: 40px;
 }
+
+.icon-row {
+  display: flex;
+  font-size: .9rem;
+}
+.icon-row-right{
+  position: absolute;
+  right:1rem
+}
+
+.icon-row-img {
+  width: 20px;
+}
+.icon-row-img-right{
+  position: absolute;
+  right:132px;
+  align-self:center;
+}
+
 .card3 {
-  top: 59rem;
+  top: 62rem;
 }
 .card4 {
   top: 105rem;
@@ -189,11 +213,13 @@ input[type='search']::-webkit-search-cancel-button {
 .hourly-forecast {
   display: flex;
 }
-.hourly-details {
+#card2-btn,
+#todays-btn {
   position: absolute;
   color: white;
   background-color: #014f9d;
   width: fit-content;
+  border:none;
   border-radius: 20px;
   padding: 0.45rem;
   bottom: 1rem;
@@ -208,5 +234,5 @@ input[type='search']::-webkit-search-cancel-button {
 .day {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-evenly
 }

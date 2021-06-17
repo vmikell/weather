@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- refreshes page content = seconds -->
     <!-- <meta http-equiv="refresh" content="10" /> -->
-    <title>Vix Weather</title>
+    <title>Broken Clouds</title>
+    <link rel="icon" href="./clouds-svgrepo-com.svg" class="icon" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -18,15 +19,15 @@
   <body>
     <div class="container">
       <div class="search-container">
-      <input
-        type="search"
-        id="search"
-        name="search"
-        placeholder=" ex. New York, NY 10001"
-      />
-      <button type="submit" id="search-button">
-        <img src="./search-svgrepo-com.svg" alt="" id="search-icon" />
-      </button>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder=" ex. New York, NY 10001"
+        />
+        <button type="submit" id="search-button">
+          <img src="./search-svgrepo-com.svg" alt="" id="search-icon" />
+        </button>
       </div>
       <h1 id="name">Location--</h1>
       <div class="card">
@@ -37,10 +38,13 @@
         <div class="item5" id="high-temp">Hi--</div>
         <div class="item6" id="low-temp">Lo--</div>
         <button type="reload" id="reload-button">
-          <img src="reload-svgrepo-com.svg" alt="">
+          <img src="reload-svgrepo-com.svg" alt="" />
         </button>
       </div>
-      <div class="card2">
+<!--  -->
+<!--  -->
+<!--  -->
+      <div class="card2" id="card2"  style="display: grid;">
         <h1>Hourly Forecast</h1>
         <div class="hourly-forecast">
           <div class="one-hour">
@@ -68,8 +72,55 @@
             <p id="third-pop"></p>
           </div>
         </div>
-        <a href="#" class="hourly-details">see details</a>
+        <button id="card2-btn">see details</button>
       </div>
+<!--  -->
+<!--  -->
+<!--  -->
+      <div class="card2-details" id="card2-details">
+        <div class="todays-details">
+          <!-- today's details starts here -->
+          <h1>Today's Details</h1>
+          <div ><span id="daytime-day">Day--</span> | Day</div>
+          <div class="daytime-container">          
+          <div id="daytime-temp">Temp--</div>
+          <img src="" id="daytime-icon"></img>
+          <div id="daytime-conditions"></div>
+          <img src="./rain-drops-svgrepo-com.svg" alt="" />
+          <div id="daytime-pop">Pop--</div>
+          <img src="./wind-svgrepo-com.svg" alt="" />
+          <div id="daytime-wind">Wind--</div>
+          </div>
+          <div id="daytime-summary">
+            Expect <span id="summary-conditions"></span> with a high temperature of 
+            <span id="summary-hi-temp"></span> and a low of 
+            <span id="summary-lo-temp"></span>. Chance of precipitation 
+            <span id="summary-pop"></span>, with wind gusts of 
+            <span id="summary-wind"></span>. Humidity around <span id="summary-humidity"></span>.
+          </div>
+          <hr />
+          <div class="icon-row">
+            <img src="./dawn-svgrepo-com.svg" alt="" class='icon-row-img'>
+            <p class="icon-row-left">Sunrise <span id="sunrise"></span> </p>
+            <img src="./sunset-svgrepo-com.svg" alt="" class='icon-row-img icon-row-img-right'>
+            <p class="icon-row-right">Sunset <span id="sunset"></span> </p>
+          </div>
+          <div class="icon-row">
+            <img src="./sun-svgrepo-com.svg" alt="" class='icon-row-img'>
+            <p class="icon-row-left">UV Index <span id="uv-index"></span> </p>
+            <img src="./wind-svgrepo-com.svg" alt="" class='icon-row-img icon-row-img-right'>
+            <p class="icon-row-right">Wind <span id="wind"></span> </p>
+          </div>
+          <div class="icon-row">
+            <img src="./droplet-svgrepo-com.svg" alt="" class='icon-row-img'>
+            <p class="icon-row-left">Dew Point <span id="dew-point"></span> </p>
+            <img src="./barometer-svgrepo-com.svg" alt="" class='icon-row-img icon-row-img-right'>
+            <p class="icon-row-right">Pressure <span id="pressure"></span> </p>
+          </div>
+        </div>
+        <button id="todays-btn">Hourly Forecast</button>
+      </div>
+      <!-- 5 day forecast starts here -->
       <div class="card3">
         <h1 class="weekly-forecast">5 - Day Forecast</h1>
         <div class="three-day">
