@@ -307,25 +307,7 @@ window.addEventListener('DOMContentLoaded', function () {
               document.getElementById('uv-index').innerHTML =
               ': ' + uvText
 
-              function toggleCards() {
-                 let x = document.getElementById('card2')
-                 let y = document.getElementById('card2-details')
-                 if (x.style.display === 'grid') {
-                   x.style.display = 'none'
-                   y.style.display = 'grid'
-                 } else {
-                   x.style.display = 'grid'
-                   y.style.display = 'none'
-                 }
-              }
-              let cardTwoBtn = document.getElementById('card2-btn')
-              cardTwoBtn.addEventListener('click', () => {
-                toggleCards()
-              })
-              let todaysBtn = document.getElementById('todays-btn')
-              todaysBtn.addEventListener('click', ()=> {
-                toggleCards()
-              })
+              
 
               // 5-day forecast card starts here
               // turning dateTime to human format
@@ -437,6 +419,26 @@ window.addEventListener('DOMContentLoaded', function () {
             })
         })
     }
+
+    function toggleCards() {
+      let x = document.getElementById('card2')
+      let y = document.getElementById('card2-details')
+      if (x.style.display === 'grid') {
+        x.style.display = 'none'
+        y.style.display = 'grid'
+      } else {
+        x.style.display = 'grid'
+        y.style.display = 'none'
+      }
+    }
+    let cardTwoBtn = document.getElementById('card2-btn')
+    cardTwoBtn.addEventListener('click', () => {
+      toggleCards()
+    })
+    let todaysBtn = document.getElementById('todays-btn')
+    todaysBtn.addEventListener('click', () => {
+      toggleCards()
+    })
 
     // onClick / search starts here
     const search = document.getElementById('search-button')
