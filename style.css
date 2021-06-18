@@ -23,6 +23,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
   line-height: 1.6;
+  justify-content: center;
 }
 .container {
   position: absolute;
@@ -117,6 +118,7 @@ input[type='search']::-webkit-search-cancel-button {
 .card {
   position: absolute;
   top: 8rem;
+  justify-self: center;
   width: 350px;
   box-shadow: var(--card-clr-shadow);
   display: grid;
