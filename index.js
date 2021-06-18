@@ -260,7 +260,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 ' mph  ' +
                 winDir
               document.getElementById('pressure').innerHTML =
-                ': ' + Math.round(tempInfo.daily[0].pressure / 33.864) + ' inHg'
+                ': ' + (tempInfo.daily[0].pressure / 33.864).toFixed(2) + ' inHg'
               
                 // convert utc sunrise to human time
               let sunriseUtcTime = tempInfo.daily[0].sunrise
