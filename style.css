@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 :root {
-  --text-clr: rgb(102, 101, 101);
-  --card-clr: rgba(255, 255, 255, 0.7);
+  --text-clr: white;
+  --card-clr: rgba(255, 255, 255, 0.3);
   --card-clr-shadow: 0 0 10px 1px rgba(151, 149, 149, 0.5);
 }
 *,
