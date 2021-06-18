@@ -22,10 +22,25 @@ body {
 }
 .container {
   position: absolute;
-  top: 0;
+  top: 1.8rem;
   display: grid;
   place-items: center;
   width: 400px;
+}
+header{
+  position: absolute;
+  top:-.5rem;
+  width:355px;
+  color: white;
+  background-color:rgba(255, 255, 255, 0.3);
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  z-index:9;
+}
+header img{
+  width:20px;
 }
 
 .item1 {
