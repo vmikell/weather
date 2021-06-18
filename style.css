@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-:root{
-  --text-clr:rgb(102, 101, 101);
+:root {
+  --text-clr: rgb(102, 101, 101);
   --card-clr: rgba(255, 255, 255, 0.7);
   --card-clr-shadow: 0 0 10px 1px rgba(151, 149, 149, 0.5);
 }
@@ -31,26 +31,26 @@ body {
   place-items: center;
   width: 400px;
 }
-video{
-  width:400px;
-  100vh;
-  position:fixed;
-  top:-1rem;
+video {
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: -1rem;
 }
-header{
+header {
   position: absolute;
-  top:-.5rem;
-  width:400px;
+  top: -0.5rem;
+  width: 400px;
   color: white;
-  background-color:rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   text-align: center;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index:9;
+  z-index: 9;
 }
-header img{
-  width:20px;
+header img {
+  width: 20px;
 }
 
 .item1 {
