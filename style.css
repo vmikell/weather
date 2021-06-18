@@ -30,7 +30,7 @@ body {
 video{
   width:400px;
   position:fixed;
-  top:0
+  top:-1rem
 }
 header{
   position: absolute;
