@@ -35,6 +35,7 @@ video{
   width:400px;
   position:fixed;
   top:-1rem;
+  justify-self: center;
 }
 header{
   position: absolute;
