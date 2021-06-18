@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-
+:root{
+  --text-clr:rgb(102, 101, 101);
+  --card-clr: rgba(255, 255, 255, 0.7);
+  --card-clr-shadow: 0 0 10px 1px rgba(151, 149, 149, 0.5);
+}
 *,
 *::before,
 *::after {
@@ -30,13 +34,13 @@ body {
 video{
   width:400px;
   position:fixed;
-  top:-1rem
+  top:-1rem;
 }
 header{
   position: absolute;
   top:-.5rem;
   width:400px;
-  color: white;
+  color: var(--text-clr);
   background-color:rgba(255, 255, 255, 0.3);
   text-align: center;
   display:flex;
@@ -113,12 +117,12 @@ input[type='search']::-webkit-search-cancel-button {
   position: absolute;
   top: 8rem;
   width: 350px;
-  box-shadow: 0 0 10px 1px;
+  box-shadow: var(--card-clr-shadow);
   display: grid;
   gap: 5px;
   padding: 1rem;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--card-clr);
   grid-template-areas:
     'a a b'
     'a a b'
@@ -135,11 +139,11 @@ input[type='search']::-webkit-search-cancel-button {
 }
 #temp {
   font-size: 3rem;
-  color: white;
+  color: var(--text-clr);
 }
 #conditions {
   font-size: 1.5rem;
-  color: white;
+  color: var(--text-clr);
 }
 #icon {
   padding-left: 0rem;
@@ -147,7 +151,7 @@ input[type='search']::-webkit-search-cancel-button {
 #high-temp,
 #low-temp,
 #feels-like {
-  color: white;
+  color: var(--text-clr);
 }
 .card p {
   line-height: 0.1rem;
@@ -157,7 +161,7 @@ input[type='search']::-webkit-search-cancel-button {
 .card2,
 .card3,
 .card4 {
-  color: white;
+  color: var(--text-clr);
   position: absolute;
   width: 350px;
   /* box-shadow: 0 0 10px 1px; */
@@ -165,7 +169,8 @@ input[type='search']::-webkit-search-cancel-button {
   gap: 5px;
   padding: 1rem;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--card-clr);
+  box-shadow: var(--card-clr-shadow);
 }
 /* this one */
 .card2 {
@@ -180,7 +185,7 @@ input[type='search']::-webkit-search-cancel-button {
 .card2-details {
   width: 350px;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--card-clr);
   top: 25rem;
   height: 545px;
   border-radius: 15px;
@@ -190,7 +195,7 @@ input[type='search']::-webkit-search-cancel-button {
   display: none;
 }
 .todays-details {
-  color: white;
+  color: var(--text-clr);
   position: absolute;
   padding: 1rem;
   z-index: 20;
