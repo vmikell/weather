@@ -27,6 +27,11 @@ body {
   place-items: center;
   width: 400px;
 }
+video{
+  width:400px;
+  position:fixed;
+  top:0
+}
 header{
   position: absolute;
   top:-.5rem;
