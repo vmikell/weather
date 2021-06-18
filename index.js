@@ -288,10 +288,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
               //set uv index to human language
               uvIndex = [
-                'Minimal Danger',
-                'Low Risk',
-                'Moderate Risk',
-                'High Risk',
+                'Minimal',
+                'Low',
+                'Moderate',
+                'High',
               ]
               let uvi = Math.round(tempInfo.daily[0].uvi)
               let uvText = ''
