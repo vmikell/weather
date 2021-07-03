@@ -261,3 +261,42 @@ input[type='search']::-webkit-search-cancel-button {
   align-items: center;
   justify-content: space-evenly;
 }
+
+.card4{
+  text-align: center;
+  line-height: 1rem;
+  position:relative;
+}
+.card4 img{
+  height: 50px;
+}
+
+.ow-logo-container{
+ margin-top:-1rem;
+}
+
+
+.copywrite-container{
+  margin:auto;
+  position:absolute;
+  display:flex;
+  justify-content: space-evenly;
+  width:100%;
+  bottom:0;
+  font-size:.75rem;
+  text-align: center;
+}
+.copywrite-container i{
+  position:absolute;
+  bottom:1rem;
+}
+.copywrite-container a{
+  color:white;
+}
+.border{
+  position:absolute;
+  bottom:.5rem;
+  height:1.25rem;
+  width:1px;
+  background-color:white;
+}
